@@ -4,7 +4,7 @@ import PrismicConfig from "./prismic-configuration.json";
 const options = {
   accessToken: PrismicConfig.accessToken
 };
-export const Prismic = PrismicLib.client(PrismicConfig.apiEndpoint, options);
+export const Client = PrismicLib.client(PrismicConfig.apiEndpoint, options);
 
 export const linkResolver = doc => {
   if (doc.type === "homepage") return "/";
