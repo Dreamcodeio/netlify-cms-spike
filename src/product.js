@@ -8,6 +8,10 @@ export default class extends React.Component {
     this.state = {};
   }
 
+  componentDidUpdate() {
+    if (this.state.product) window.prerenderReady = true;
+  }
+
   componentDidMount() {
     Client.getByUID("product", this.props.computedMatch.params.uid)
       .then(product => this.setState({ product }))
